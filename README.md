@@ -3,22 +3,31 @@
 <hr>
 
 <h4>Menu</h4>
- - Home
- - Templates
- - Blog
- - Portfolio
- - About
+   <ul>
+      <li>Home</li>
+      <li>Templates</li>
+      <li>Blog</li>
+      <li>Portfolio</li>
+      <li>About</li>
+   </ul>
 
 <h5>Opportunities</h5>
- - search
- - form "contact us"->send to email
+   <ul>
+      <li>search</li>
+      <li>form "contact us"->send to email</li>      
+   </ul>
 <hr>
 
 <h4>Users</h4>
- - login
- - register
- - private office
+   <ul>
+      <li>login</li>
+      <li>register</li>
+      <li>private office</li>      
+   </ul>
 
 <h5>Opportunities</h5>
- - Bookmarks 
- - Commenting on articles
+   <ul>
+      <li>Bookmarks</li>
+      <li>Commenting on articles</li>     
+   </ul>
+
