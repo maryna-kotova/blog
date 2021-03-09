@@ -1,0 +1,13 @@
+C:\Users\Маринка>cd "D:\IT\IT education\WEB\3.PHP\Open Server\OpenServer\domains\lara"
+
+C:\Users\Маринка>D:
+
+npm install
+
+npm run dev вид для разработчика
+
+npm run prod вид для хостинга
+
+npm run watch заменяет сразу две функции выше(для выхода ctr+C) ->
+
+npm install && npm run dev
