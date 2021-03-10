@@ -8,12 +8,12 @@
     
     <section class="mainPageCategory">
         @foreach ($articles as $article)            
-            @include('store.parts._article')        
+            @include('blog.parts._article')        
         @endforeach
     </section>
-    {{-- <div class="paginations"> --}}
-        {{$articles->links()}}
-    {{-- </div> --}}
+    
+    {{$articles->links()}}
+
     
 @endsection
 

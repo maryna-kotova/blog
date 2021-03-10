@@ -6,7 +6,7 @@
             alt="{{ $article->name }}">   
     </a>         
    <div class="card-body">
-       <h5 class="card-title text-center"><a href="/article/{{$article->slug}}">{{$article->name}}</a></h5>
+       <h5 class="card-title"><a href="/article/{{$article->slug}}">{{$article->name}}</a></h5>
        <p class="card-text">{{ strip_tags($article->description) }}</p> 
        {{-- сделать затухание текста после 2х строк для длинного описания --}}
        <p>Category: <span class="font-italic">{{ $article->category_id }}</span></p>      

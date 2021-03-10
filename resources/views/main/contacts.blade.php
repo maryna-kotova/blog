@@ -58,8 +58,7 @@
 @endsection
 
 @section('sidebar')
-    @parent
-    Adress
+   
     
 @endsection
 

@@ -10074,76 +10074,6 @@ img {
   z-index: 2;
 }
 
-.mainPageCategory {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-  align-items: center;
-  width: 14rem;
-  margin: 1rem;
-  border: 1px solid lightgray;
-}
-
-.cards:hover {
-  border: 1px solid rgba(255, 92, 1, 0.75);
-}
-
-.card-img {
-  max-width: 12rem;
-  max-height: 11rem;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-btn-empty,
-.card-btn-full,
-.btn-full,
-.btn-empty {
-  padding: 7px 15px;
-  line-height: 17px;
-  font-size: 13px;
-  border-radius: 7px;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 92, 1, 0.75);
-}
-
-.card-btn-empty {
-  display: block;
-  margin: 0 auto;
-  text-decoration: none;
-  color: rgba(255, 92, 1, 0.75);
-}
-
-.card-btn-empty:hover {
-  text-decoration: none;
-  background-color: rgba(255, 92, 1, 0.75);
-  color: #fff;
-}
-
-.card-btn-full {
-  display: block;
-  margin: 0 auto;
-  text-decoration: none;
-  background-color: rgba(255, 92, 1, 0.75);
-  color: #fff;
-}
-
-.card-btn-full:hover {
-  text-decoration: none;
-  background-color: transparent;
-  color: rgba(255, 92, 1, 0.75);
-}
-
 .paginations {
   width: 50%;
   height: 10rem;
@@ -10299,4 +10229,76 @@ input, textarea {
 .recomended-article {
   display: flex;
   flex-flow: row wrap;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+  border: 1px solid lightgray;
+}
+
+.cards:hover {
+  border: 1px solid rgba(255, 92, 1, 0.75);
+}
+
+.card-img {
+  max-width: 12rem;
+  max-height: 11rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-btn-empty,
+.card-btn-full,
+.btn-full,
+.btn-empty {
+  padding: 7px 15px;
+  line-height: 17px;
+  font-size: 13px;
+  border-radius: 7px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 92, 1, 0.75);
+}
+
+.card-btn-empty {
+  display: block;
+  text-decoration: none;
+  color: rgba(255, 92, 1, 0.75);
+}
+
+.card-btn-empty:hover {
+  text-decoration: none;
+  background-color: rgba(255, 92, 1, 0.75);
+  color: #fff;
+}
+
+.card-btn-full {
+  isplay: block;
+  ext-decoration: none;
+  ackground-color: rgba(255, 92, 1, 0.75);
+  olor: #fff;
+}
+
+.card-btn-full:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgba(255, 92, 1, 0.75);
+}
+
+.footer {
+  padding: 0.5rem;
+  clear: both;
+  background: #888;
+  color: #fff;
+}
+.footer .footer-bottom {
+  margin: 0;
+  text-align: center;
+  color: #fff;
 }

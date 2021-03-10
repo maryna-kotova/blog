@@ -13,13 +13,12 @@ use App\Models\User;
 class MainController extends Controller
 {
     public function index()
-    {
-        return 'hello';
-        // $title = 'Development like hobby';
-        // $articles = Article::with('category')->recommended()->latest()->get();  
-        // $slider = Slider::all();
+    {        
+        $title = 'Development like hobby';
+        $articles = Article::with('category')->recommended()->latest()->get();  
+        $slider = Slider::all();
 
-        // return view('main.index', compact('title', 'articles', 'slider'));
+        return view('main.index', compact('title', 'articles', 'slider'));
     }
     
     public function contacts()

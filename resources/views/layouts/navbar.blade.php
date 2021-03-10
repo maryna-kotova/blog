@@ -41,12 +41,7 @@
       </form>
 
       <ul class="navbar-nav ml-auto">
-        <!-- Authentication Links -->
-        <li class="nav-item">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
-            Cart
-          </button>
-        </li>
+        <!-- Authentication Links -->        
 
         @role('admin')
           <li class="nav-item">

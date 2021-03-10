@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="shortcut icon" href="images/icons/logo.png" type="image/x-icon">
+    
 
 
     <!-- CSRF Token -->
@@ -25,7 +26,7 @@
 </head>
 <body>
   <div class="all">
-    {{-- @include('layouts.navbar') --}}
+    @include('layouts.navbar')
 
     <section class="container">
 
@@ -42,7 +43,10 @@
     </section>
 
     <footer class="footer">
-      <p class="footer-bottom">&copy;Maryna Kotova 2021</p>
+      <p class="footer-bottom">
+        &copy; Maryna Kotova 2021 <br>
+        incodding@gmail.com
+    </p>
     </footer>
     <a class="up" href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
   </div>
