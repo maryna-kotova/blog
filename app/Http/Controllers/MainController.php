@@ -23,7 +23,7 @@ class MainController extends Controller
     
     public function contacts()
     {
-        $title = 'Контакты';
+        $title = 'Contacts';
         return view('main.contacts', compact('title'));
     }
 

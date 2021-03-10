@@ -5,10 +5,11 @@
 <h4>Menu</h4>
    <ul>
       <li>Home</li>
-      <li>Templates</li>
+      <li>News</li>
       <li>Blog</li>
       <li>Portfolio</li>
-      <li>About</li>
+      <li>Reviews</li>
+      <li>Contacts</li>
    </ul>
 
 <h5>Opportunities</h5>

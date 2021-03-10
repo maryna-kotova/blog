@@ -13,23 +13,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-white text-uppercase" href="/">Главная</a>
+          <a class="nav-link text-white text-uppercase" href="/">Home</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase sale" href="/sale">%Акции</a>
+          <a class="nav-link text-white text-uppercase" href="/news">News</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/news">Новости</a>
+          <a class="nav-link text-white text-uppercase" href="/blog">Blog</a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link text-white text-uppercase" href="/portfolio">Portfolio</a>
         </li>
-        
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/reviews">Отзывы</a>
+          <a class="nav-link text-white text-uppercase" href="/reviews">Reviews</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/contacts">Контакты</a>
+          <a class="nav-link text-white text-uppercase" href="/contacts">Contacts</a>
         </li>
       </ul>
 
