@@ -10105,11 +10105,6 @@ img {
   justify-content: space-between;
 }
 
-.card-price {
-  text-align: center;
-  color: rgba(255, 92, 1, 0.75);
-}
-
 .card-btn-empty,
 .card-btn-full,
 .btn-full,
@@ -10229,17 +10224,6 @@ input, textarea {
   color: rgba(255, 92, 1, 0.65);
 }
 
-.img-product {
-  width: 500px;
-  max-width: 80%;
-  margin: 1rem;
-}
-
-.recomended-product {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 .card-btn-empty,
 .card-btn-full,
 .btn-full,
@@ -10304,4 +10288,15 @@ input, textarea {
   text-decoration: none;
   text-shadow: 1px 1px 1px #fff;
   color: white;
+}
+
+.img-article {
+  width: 500px;
+  max-width: 80%;
+  margin: 1rem;
+}
+
+.recomended-article {
+  display: flex;
+  flex-flow: row wrap;
 }
