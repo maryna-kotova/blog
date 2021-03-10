@@ -34,7 +34,7 @@ Route::post('/contacts',        [MainController::class,      'getContacts']);
 Route::get( '/reviews',         [ReviewController::class,    'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class,    'saveReview']);
 Route::get( '/news',            [NewsController::class,      'news']);
-Route::get( '/blog',            [BlogController::class,      'index']);
+//Route::get( '/blog',            [BlogController::class,      'index']);
 Route::get( '/portfolio',       [PortfolioController::class, 'portfolio']);
 
 Route::get( '/category/{slug}',         [BlogController::class,  'category']);
