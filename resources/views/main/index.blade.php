@@ -1,33 +1,24 @@
 @extends('layouts.main')
 
-{{-- @section('css')
-    <link rel="stylesheet" href="css/style.css">    
-@endsection --}} 
-
 @section('content')   
 
-    @include('slider.slider')
+    {{-- @include('slider.slider') --}}
  
     <h1 class="text-center">{{ $title }}</h1>
 
     <div class="page-header">
-        <p class="title">Категории</p>
+        <p class="title"></p>
     </div>
-    <section class="mainPageCategory">
-        @foreach ($products as $product)
+    {{-- <section class="mainPageCategory">
+        @foreach ($articles as $article)
   
-            @include('store.parts._product')
+            @include('blog.parts._article')
   
         @endforeach
-    </section>
-  
-    {{-- {{$products->links()}} --}}
+    </section>    --}}
 
 @endsection
 
-{{-- @section('title')
-    {{ $title }} 
-@endsection --}} 
-@section('title', 'Cat&Dog')
+@section('title', 'InCod')
 
 

@@ -25,14 +25,14 @@
 </head>
 <body>
   <div class="all">
-    @include('layouts.navbar')
+    {{-- @include('layouts.navbar') --}}
 
     <section class="container">
 
       <div class="row">
         <div class="col-md-3">
           @section('sidebar')
-            @include('store.parts._list-categories')              
+            {{-- @include('blog.parts._list-categories')               --}}
           @show
           
         </div>
