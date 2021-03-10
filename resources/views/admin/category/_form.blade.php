@@ -19,18 +19,12 @@
    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
-{{-- <div class="form-group">
-   {!! Form::label('imgUpload', 'Category Image: ') !!}
-   {!! Form::file('imgUpload', ['class' => 'form-control']) !!}
-</div> --}}
-
 <div class="input-group">
    <span class="input-group-btn">
      <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
        <i class="fa fa-picture-o"></i> Choose
      </a>
    </span>
-   {{-- name="img"   используем в контроллере категории  $request->img --}}
    <input id="thumbnail" 
           class="form-control" 
           type="text" 

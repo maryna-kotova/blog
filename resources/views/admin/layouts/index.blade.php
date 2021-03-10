@@ -181,24 +181,31 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="list-item">
-              <a href="/admin/category"><i class="fas fa-folder"></i> Категории</a>
-            </li>
-            <li class="list-item">
-              <a href="/admin/product"><i class="fas fa-folder"></i> Товары</a>
-            </li>
-            <li class="list-item">
               <a href="/admin/slider"><i class="fas fa-folder"></i> Слайдер</a>
             </li>
             <li class="list-item">
-              <a href="/admin/order"><i class="fas fa-folder"></i> Заказы</a>
+              <a href="/admin/news"><i class="fas fa-folder"></i> News</a>
             </li>
+            <li class="list-item">
+              <a href="/admin/category"><i class="fas fa-folder"></i> Categories</a>
+            </li>
+            <li class="list-item">
+              <a href="/admin/article"><i class="fas fa-folder"></i> Articles</a>
+            </li>             
+            <li class="list-item">
+              <a href="/admin/portfolio"><i class="fas fa-folder"></i> Portfolio</a>
+            </li>
+            <li class="list-item">
+              <a href="/admin/about"><i class="fas fa-folder"></i> About</a>
+            </li>
+            <li class="list-item">
+              <a href="/admin/users"><i class="fas fa-folder"></i> Users</a>
+            </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -42,30 +42,9 @@
     </section>
 
     <footer class="footer">
-      <p class="footer-bottom">&copy;Maryna Kotova 2020</p>
+      <p class="footer-bottom">&copy;Maryna Kotova 2021</p>
     </footer>
     <a class="up" href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
-  </div>
-
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          @include('store.parts._cart')
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger clear-cart">Clear Cart</button>
-          <a href="/checkout" class="btn btn-primary">Checkout</a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

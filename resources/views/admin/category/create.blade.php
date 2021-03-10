@@ -1,15 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
-   <h1>Добавить категорию</h1>
-
-   {{-- @include('messages.errors')
-
-   @if(session('success'))
-       <div class="alert alert-success">
-           {{session('success')}}
-       </div>        
-   @endif --}}
+   <h1>Add category</h1>
 
    {!! Form::open(['url' => '/admin/category', 'files' => true]) !!}
       

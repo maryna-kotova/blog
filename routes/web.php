@@ -33,31 +33,20 @@ use Illuminate\Support\Facades\Auth;
 Route::get( '/',                [MainController::class,   'index']);
 Route::get( '/contacts',        [MainController::class,   'contacts'])->middleware('auth');
 Route::post('/contacts',        [MainController::class,   'getContacts']);
-Route::get( '/sale',            [StoreController::class,  'sale']);
+Route::get( '/index',           [BlogController::class,   'index']);
 Route::get( '/reviews',         [ReviewController::class, 'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class, 'saveReview']);
 Route::get( '/news',            [NewsController::class,   'news']);
 
-Route::post('/cart/add',         [CartController::class,   'add']);
-Route::post('/cart/clear',       [CartController::class,   'clear']);
-Route::post('/cart/remove/{id}', [CartController::class,   'remove']);
-Route::post('/cart/change-qty',  [CartController::class,   'change']);
-
-Route::get( '/category/{slug}',         [StoreController::class,  'category']);
-Route::get( '/product/{product:slug}',  [StoreController::class,  'product']);
-
-Route::get( '/checkout',  [CheckoutController::class,  'checkout']);
-Route::post('/checkout',  [CheckoutController::class,  'checkoutSave']);
-
+Route::get( '/category/{slug}',         [BlogController::class,  'category']);
+Route::get( '/article/{article:slug}',  [BlogController::class,  'article']);
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);  
 
    Route::resource('/category', CategoryController::class); 
-   Route::resource('/product',  ProductController::class); 
-   Route::resource('/slider',   SliderController::class);
-   Route::resource('/order',    OrderController::class);
-   
+   Route::resource('/article',  ProductController::class); 
+   Route::resource('/slider',   SliderController::class);   
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

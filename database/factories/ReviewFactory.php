@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
+use App\Models\Article;
 use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,7 +25,7 @@ class ReviewFactory extends Factory
         return [
             'name'       => $this->faker->words(2, true),            
             'review'     => $this->faker->paragraphs(2, true),           
-            'product_id' => Product::factory(),
+            'article_id' => Article::factory(),
         ];
     }
 }

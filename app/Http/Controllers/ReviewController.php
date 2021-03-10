@@ -21,8 +21,8 @@ class ReviewController extends Controller
         $review = new Review();
         $review->name = $request->nameReviews;
         $review->review = $request->review;
-        if($_POST['product_id']){
-            $review->product_id = $request->product_id;
+        if($_POST['article_id']){
+            $review->article_id = $request->article_id;
             $review->save();
         }
         $review->save();

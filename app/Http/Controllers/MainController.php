@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Permission;
-use App\Models\Product;
+use App\Models\article;
 use App\Models\Role;
 use App\Models\Slider;
 use App\Models\User;
@@ -14,11 +14,11 @@ class MainController extends Controller
 {
     public function index()
     {
-        $title = 'Всё для домашних животных';
-        $products = Product::with('category')->recommended()->latest()->get();  
+        $title = 'Development like hobby';
+        $articles = Article::with('category')->recommended()->latest()->get();  
         $slider = Slider::all();
 
-        return view('main.index', compact('title', 'products', 'slider'));
+        return view('main.index', compact('title', 'articles', 'slider'));
     }
     
     public function contacts()

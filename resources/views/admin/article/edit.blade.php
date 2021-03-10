@@ -1,15 +1,15 @@
 @extends('admin.layouts.index')
 
 @section('content')
-   <h1>Edit category</h1>
+   <h1>Edit article</h1>
 
-   {!! Form::model($category,[                     
-                              'url' => '/admin/category/'.$category->id, 
+   {!! Form::model($article,[                     
+                              'url' => '/admin/article/'.$article->id, 
                               'files' => true, 
                               'method' => 'put'
                               ]) !!}
       
-      @include('admin.category._form')
+      @include('admin.article._form')
 
    {!! Form::close() !!}
 
@@ -29,5 +29,7 @@
       CKEDITOR.replace('description', options);
       
       $('#lfm').filemanager('image');
+
+      $('.recommended_articles').select2();
    </script>    
 @endsection

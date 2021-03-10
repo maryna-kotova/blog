@@ -83,10 +83,7 @@ img{
     flex-direction: column;
     justify-content: space-between;
 }
-.card-price{
-    text-align: center;
-    color: rgba(255,92,1,.75);
-}
+
 .card-btn-empty,
 .card-btn-full,
 .btn-full,
@@ -188,14 +185,6 @@ input, textarea{
 .fa-arrow-alt-circle-up:hover{
     color: rgba(255,92,1,0.65);
 }
-.img-product{
-    width: 500px;
-    max-width: 80%;
-    margin: 1rem;
-}
-.recomended-product{
-    display: flex;
-    flex-flow: row wrap;
-}
+
 
 

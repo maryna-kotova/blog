@@ -26,9 +26,7 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        $this->app->bind('Cart', CartService::class);
-        Paginator::useBootstrap();
-        View::share('shareCategories', Category::withCount('products')->having('products_count', '>', '0')->get());
+    {        
+        Paginator::useBootstrap();        
     }
 }
