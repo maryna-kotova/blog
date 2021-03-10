@@ -45,7 +45,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);  
 
    Route::resource('/category', CategoryController::class); 
-   Route::resource('/article',  ProductController::class); 
+   Route::resource('/article',  ArticleController::class); 
    Route::resource('/slider',   SliderController::class);   
 });
 
