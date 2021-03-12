@@ -14,11 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/article', function (Request $request) {
-//     return $request->article();
-// });
+Route::post('register', 'API\RegisterController@register');
 
-Route::namespace('Api')->group(function () {
-    Route::apiResource('/', 'ArticleController');
-    });
-   
+Route::middleware('auth:api')->group( function () {
+    Route::resource('articles', 'API\ArticleController');
+});
+
+Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+
+    return ['token' => $token->plainTextToken];
+});
+Route::middleware('auth:sanctum')->get('/article', function (Request $request) {
+    return $request->article();
+});
+
