@@ -9,6 +9,7 @@
     <div class="page-header">
         <p class="title"></p>
     </div>
+   <footer>123</footer> <img src="" alt="ggggg">
     {{-- <section class="mainPageCategory">
         @foreach ($articles as $article)
   
@@ -21,4 +22,10 @@
 
 @section('title', 'InCod')
 
+<script>
+function() {
+ showName(this);
+}
+
+</script>
 

@@ -7,6 +7,7 @@ use App\Services\CartService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
+use Laravel\Sanctum\Sanctum;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Sanctum::ignoreMigrations();
     }
 
     /**

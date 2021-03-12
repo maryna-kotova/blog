@@ -10,8 +10,10 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Resources\ArticleResource;
+use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +25,13 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/', 'MainController@index'); - laravel before 8 version
 Route::get( '/',                [MainController::class,      'index']);
 Route::get( '/contacts',        [MainController::class,      'contacts'])->middleware('auth');
 Route::post('/contacts',        [MainController::class,      'getContacts']);
 Route::get( '/reviews',         [ReviewController::class,    'reviews'])->name('review');
 Route::post('/reviews',         [ReviewController::class,    'saveReview']);
 Route::get( '/news',            [NewsController::class,      'news']);
-//Route::get( '/blog',            [BlogController::class,      'index']);
+Route::get( '/blog',            [BlogController::class,      'index']);
 Route::get( '/portfolio',       [PortfolioController::class, 'portfolio']);
 
 Route::get( '/category/{slug}',         [BlogController::class,  'category']);
@@ -53,5 +50,3 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 
 Auth::routes();
-
- 
