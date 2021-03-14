@@ -1,6 +1,14 @@
 body{   
-    font: 400 13px/21px 'Open Sans',sans-serif;
-    color: #666;
+    font-family: 'Play',sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    color: $lightgray;
+    min-height: 100vh;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%);
+    background-size: 4px 4px, 3px 3px, 5px 5px, 3px 3px, 6px 6px, 4px 4px, 5px 5px, 4px 4px, 6px 6px, 3px 3px, 5px 5px, 4px 4px, 3px 3px, 6px 6px, 5px 5px, 4px 4px, 5px 5px, 6px 6px;
+    background-position: 20% 10%, 5% 20%, 10% 75%, 20% 30%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%, 98% 90%, 20% 80%, 50% 80%, 75% 80%, 89% 75%, 90% 95%, 60% 70%, 65% 40%, 90% 20%;
+    background-repeat: no-repeat;
+    
 }
 
 *{
@@ -20,16 +28,14 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // background-color: $body-bg;
 }
-.navbar{    
-    background-color: rgba(0,0,0,0.4) !important;
-    position: sticky;
-    top: 0;
-}
+
 .sale{
     text-shadow: 0 0 5px #fff;
 }
 .container{
+    flex-grow: 1;
     padding: 3rem 0;
 }
 .page-header{
@@ -41,7 +47,7 @@ img{
 .page-header:before {
     content: '';
     display: block;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $lightgray;
     position: absolute;
     top: 50%;
     left: 0;
@@ -50,16 +56,13 @@ img{
 .title {
     position: relative;
     display: inline-block;
-    background: #fff;
-    color: #666;
+    background: $body-bg;
+    color: $lightgray;
     font: 300 25px/25px 'Open Sans',sans-serif;
     padding: 0 15px;
     margin: 0;
     z-index: 2;
 }
-
-
-
 
 .paginations{
     width: 50%;
@@ -76,15 +79,30 @@ img{
     margin-right: 1rem;
     border: 1px solid lightgray;
 }
-.formaReviews, 
-.formaContacts,
-.windowMessage{
+.card{
+    background: transparent;
+    color: $lightgray;
+    .card-header{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 900;
+        color: $lightgray;
+    }
+    input{
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+.windowMessage,
+.forms{
     width: 50%; 
     margin: 2rem auto;
+    input, textarea{
+        box-shadow: none !important;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
 }
-input, textarea{
-    box-shadow: none !important;
-}
+
 .border-secondary{
     border: 1px solid lightgray !important;
 }
@@ -92,24 +110,7 @@ input, textarea{
 .textareaReviews{
     min-height:7rem; 
 }
-.btn-full{    
-    background-color: rgba(255,92,1,.75);
-    color: #fff;
-}
-.btn-full:hover{
-    outline: none;
-    background-color: transparent;
-    color: rgba(255,92,1,.75);
-}
-.btn-empty{
-    background-color: transparent;
-    color: rgba(255,92,1,.75);
-}
-.btn-empty:hover{
-    outline: none;
-    background-color: rgba(255,92,1,.75);
-    color: #fff;
-}
+
 .up{
     display: block;
     width:3rem;
@@ -126,7 +127,13 @@ input, textarea{
     font-size: 3rem;  
 }
 .fa-arrow-alt-circle-up:hover{
-    color: rgba(255,92,1,0.65);
+    color: $pink;
+}
+.block-bg{
+    background-color: $block-bg;
+}
+.review-top{
+    color: $blue;
 }
 
 

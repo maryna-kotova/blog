@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="shortcut icon" href="images/icons/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     
 
 
@@ -28,25 +29,14 @@
   <div class="all">
     @include('layouts.navbar')
 
-    <section class="container">
-
-      <div class="row">
-        <div class="col-md-3">
-          @section('sidebar')
-            {{-- @include('blog.parts._list-categories')               --}}
-          @show
-          
-        </div>
-        <div class="col-md-9">@yield('content')</div>
-      </div>        
-        
+    <section class="container">      
+      @yield('content')         
     </section>
 
     <footer class="footer">
       <p class="footer-bottom">
-        &copy; Maryna Kotova 2021 <br>
-        incodding@gmail.com
-    </p>
+        &copy; 2021 incodding@gmail.com
+      </p>
     </footer>
     <a class="up" href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
   </div>

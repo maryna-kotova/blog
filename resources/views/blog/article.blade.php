@@ -23,7 +23,7 @@
 
    {{-- Фрма для отправки отзыва --}}
     @auth
-    <form action="/reviews" method="POST">
+    <form action="/reviews" method="POST" class="forms">
         @csrf
         <div class="form-group">            
         <input type="text"  
@@ -57,9 +57,10 @@
     <h4>Article reviews: {{ count($reviews) }}</h4>
         
     @forelse ($reviews as $review)
-      <div class="border p-3 m-3">
-         {{$review->name}} | {{ $review->created_at->format('d.m.Y') }} 
-         <hr>
+      <div class="block-bg p-3 m-3">
+         <span class="review-top">{{$review->name}} | {{ $review->created_at->format('d.m.Y') }}</span> 
+         <br>
+         <br>
          <bloquote>{{$review->review}}</bloquote>
       </div>
       @empty

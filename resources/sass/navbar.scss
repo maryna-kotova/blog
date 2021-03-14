@@ -1,0 +1,41 @@
+.navbar{    
+   background-color: $nav-bg !important;
+   position: sticky;
+   top: 0;
+}
+.nav-icon{
+   font-weight: 800;
+   text-transform: uppercase; 
+   color: $pink;   
+   span{
+      text-transform: lowercase;  
+      font-weight: 600; 
+      color: $lightgray;         
+   }
+}
+
+.underline{
+   margin: 0 0.5rem;
+   padding: 0.5rem 0 !important;
+   position: relative;
+   color: $pink; 
+   cursor: pointer;
+   line-height: 1; 
+   text-decoration: none; 
+   text-transform: uppercase;
+   &:after {
+       display: block;
+       position: absolute;
+       left: 0; 
+       width: 0;
+       height: 2px; 
+       background-color: $pink;       
+       content: "";
+       transition: width 0.3s ease-out; 
+   }
+  
+   &:hover:after,
+   &:focus:after{
+      width: 100%; 
+   }
+}

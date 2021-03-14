@@ -184,9 +184,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="list-item">
-              <a href="/admin/slider"><i class="fas fa-folder"></i> Слайдер</a>
-            </li>
+            
             <li class="list-item">
               <a href="/admin/news"><i class="fas fa-folder"></i> News</a>
             </li>

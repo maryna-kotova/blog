@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark"
     style="position: sticky; top: 0; background-color: rgba(0,0,0,0.6); z-index:10">
-    <a class="navbar-brand" href="/">Menu</a>
+    <a class="navbar-brand" href="/"><span class="nav-icon">in<span>cod</span></span></a>
     <button class="navbar-toggler" 
             type="button" 
             data-toggle="collapse" 
@@ -13,32 +13,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-white text-uppercase" href="/">Home</a>
+          <a class="nav-link text-white underline" href="/">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-white underline" href="/news">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/news">News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/blog">Blog</a>
+          <a class="nav-link text-white underline" href="/blog">Blog</a>
         </li>        
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/portfolio">Portfolio</a>
-        </li>
+          <a class="nav-link text-white underline" href="/portfolio">Portfolio</a>
+        </li>        
         <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/reviews">Reviews</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white text-uppercase" href="/contacts">Contacts</a>
+          <a class="nav-link text-white underline" href="/contacts">Contacts</a>
         </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
+      {{-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" 
                type="search" 
                placeholder="Search" 
                aria-label="Search">
         <button class="btn btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> --}}
 
       <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->        

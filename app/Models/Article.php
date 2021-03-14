@@ -59,10 +59,10 @@ class Article extends Model
        return $this->belongsToMany(Self::class, 'articles_recommendeds', 'article_id', 'recommended_id');
     }
 
-    public function boot()
-    {
-        Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
-    }
+    // public function boot()
+    // {
+    //     Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
+    // }
 
     public function getRelevantArticles()
     {

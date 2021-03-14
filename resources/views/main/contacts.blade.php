@@ -17,7 +17,7 @@
     </div>
  
 
-    <form action="/contacts" method="POST" class="formaContacts">
+    <form action="/contacts" method="POST" class="forms">
         @csrf  
         {{--  @csrf   обязательная защита данных и убирает 419 ошибку --}}
         <div class="form-group">

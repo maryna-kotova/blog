@@ -32,3 +32,21 @@
     background-color: transparent;
     color: rgba(255,92,1,.75);
 }
+.btn-full{    
+    background-color: rgba(255,92,1,.75);
+    color: #fff;
+}
+.btn-full:hover{
+    outline: none;
+    background-color: transparent;
+    color: rgba(255,92,1,.75);
+}
+.btn-empty{
+    background-color: transparent;
+    color: rgba(255,92,1,.75);
+}
+.btn-empty:hover{
+    outline: none;
+    background-color: rgba(255,92,1,.75);
+    color: #fff;
+}
