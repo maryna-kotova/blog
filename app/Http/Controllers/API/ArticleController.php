@@ -15,10 +15,9 @@ class ArticleController extends Controller
      */
     public function index()
     {           
-        $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
-        // dd($moreArticles);    
+        $articles = Article::ail(); 
 
-        return view('blog.article', compact('article', 'moreArticles', 'reviews', 'recommended'));
+        return $this->sendResponse($articles->toArray(), 'Article retrieved successfully.');
     }
 
     /**
@@ -27,11 +26,11 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Article $article)
     {
-        $input = $request->all();
-        $articles = Article::create($input);
-        return $this->sendResponse($articles->toArray(), 'Article created successfully.');
+        $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
+        // dd($moreArticles);
+        return $this->sendResponse($moreArticles->toArray(), 'Article created successfully.');
     }
 
     /**
@@ -54,13 +53,10 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
-        $input = $request->all();
-      
-        $article->name = $input['name'];
-        $article->detail = $input['detail'];
-        $article->save();
+        $article = Article::findOrFail($id);        
+        $article -> update( $request->all() );
         return $this->sendResponse($article->toArray(), 'Article updated successfully.');
     }
 
