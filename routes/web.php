@@ -35,7 +35,7 @@ Route::get( '/blog',            [BlogController::class,      'index']);
 Route::get( '/portfolio',       [PortfolioController::class, 'portfolio']);
 
 Route::get( '/category/{slug}',         [BlogController::class,  'category']);
-// Route::get( '/article/{article:slug}',  [BlogController::class,  'article']);
+Route::get( '/article/{article:slug}',  [BlogController::class,  'article']);
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
    Route::get('/',  [AdminController::class,  'index']);  

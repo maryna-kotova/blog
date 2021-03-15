@@ -14,19 +14,11 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {                  
-        $article  = Article::where('id', '=', $id)->paginate(5);    
-        $articles = Article::where('category_id', '=', $this->category->id)->limit(2);
-        
-        $relevantArticles = [];
-        foreach ( $articles as $article ){
-            $relevantArticles[] = [
-                'id' => $article->id,
-                'name' => $article->name,
-                'created_at' => $article->created_at,
-            ];
-        }     
-        return view('blog.index', compact('title','articles'));
+    {           
+        $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
+        // dd($moreArticles);    
+
+        return view('blog.article', compact('article', 'moreArticles', 'reviews', 'recommended'));
     }
 
     /**

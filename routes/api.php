@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Resources\ArticleResource;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get( '/article/{article:slug}',  [BlogController::class,  'article']);
+
+Route::get('/article/{article:slug}', function ($id) {
+    return new ArticleResource(Article::where('category_id', $this->category_id)->limit(2)->get());
+});
+
 
 
 
