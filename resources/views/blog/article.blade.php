@@ -76,6 +76,19 @@
             @include('store.parts._article')  
         @endforeach   
     </div>
+    <div class="page-header">
+        <p class="title">More articles</p>
+     </div>
+    
+        @foreach ($moreArticles as $item)
+            <div style="background:#0c16378c">
+                <h3>{{$item->name}}</h3>        
+                <p>{{$item->created_at}}</p>
+                <hr>
+                <p>{{ strip_tags($article->description) }}</p>
+            </div>
+        @endforeach
+    
 @endsection
 
 @section('title', $article->name)

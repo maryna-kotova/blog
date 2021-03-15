@@ -64,20 +64,7 @@ class Article extends Model
     //     Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
     // }
 
-    public function getRelevantArticles()
-    {
-        $articles = Article::where('category_id', '=', $this->category->id)->limit(2);
-        
-        $relevantArticles = [];
-        foreach ( $articles as $article ){
-            $relevantArticles[] = [
-                'id' => $article->id,
-                'name' => $article->name,
-                'created_at' => $article->created_at,
-            ];
-        }
-        return $relevantArticles;
-    }
+  
 
 
 }

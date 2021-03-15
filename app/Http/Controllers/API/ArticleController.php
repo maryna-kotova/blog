@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
-use Validator;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -15,10 +14,19 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {     
-        $articles = Article::all();   
-        // $articles = Article::all()->getRelevantArticles();
-        return $this->sendResponse($articles->toArray(), 'Articles retrieved successfully.');
+    {                  
+        $article  = Article::where('id', '=', $id)->paginate(5);    
+        $articles = Article::where('category_id', '=', $this->category->id)->limit(2);
+        
+        $relevantArticles = [];
+        foreach ( $articles as $article ){
+            $relevantArticles[] = [
+                'id' => $article->id,
+                'name' => $article->name,
+                'created_at' => $article->created_at,
+            ];
+        }     
+        return view('blog.index', compact('title','articles'));
     }
 
     /**

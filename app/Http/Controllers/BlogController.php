@@ -12,8 +12,7 @@ class BlogController extends Controller
     public function index()
     {
         $title = 'Blog';          
-        $articles   = Article::where('recommended', '=', 1)->paginate(5);    
-        $categories = Category::all();       
+        $articles   = Article::where('recommended', '=', 1)->paginate(5);               
         return view('blog.index', compact('title','articles'));
     }
     public function category($slug)
@@ -27,7 +26,10 @@ class BlogController extends Controller
     {
         $recommended = $article->articleRecommended;        
         $reviews= Review::where('article_id', $article->id)->get();         
-        
-        return view('blog.article', compact('article', 'reviews', 'recommended'));
+              
+        $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
+        // dd($moreArticles);    
+
+        return view('blog.article', compact('article', 'moreArticles', 'reviews', 'recommended'));
     }
 }
