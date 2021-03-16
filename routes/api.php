@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\ArticleController;
+use App\Http\Resources\ArticleCollection;
 use App\Http\Resources\ArticleResource;
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware('auth:api')->group( function () {
-  Route::resource('/test', ArticleController::class);
+Route::get('/users', function () {
+    return new ArticleCollection(Article::all());
 });
 
 
