@@ -13,10 +13,10 @@ class ArticleResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function toArray($request, Article $article)
+    public function toArray($request)
     {
         // return parent::toArray($request); 
-        $articles = Article::where('category_id', $article->category_id)->limit(2)->get(); 
+        $articles = Article::where('category_id', $this->category_id)->limit(2)->get(); 
         $relevatPosts = [];
 
         foreach($articles as $article){
@@ -27,9 +27,9 @@ class ArticleResource extends JsonResource
           ];
         };
         return [
-          'id' => $article->id,
-          'name' => $article->name,
-          'created_at' => $article->created_at,
+          'id' => $this->id,
+          'name' => $this->name,
+          'created_at' => $this->created_at,
           'relevant_posts' => $relevatPosts,
         ];   
     }
