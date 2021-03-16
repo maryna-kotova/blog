@@ -16,11 +16,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-
-Route::get('/users', function () {
-    return new ArticleCollection(Article::all());
+Route::get('/article/{id}', function ($id) {
+    return new ArticleResource(Article::findOrFail($id));
 });
+
 
 
 
