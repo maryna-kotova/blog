@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderShipped extends Mailable
+class ContactShipped extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,16 +16,16 @@ class OrderShipped extends Mailable
      *
      * @var \App\Models\Order
      */
-    // public $order;
+    public $dataValidated;       
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    // public function __construct(Order $order)
-    // {      
-    //     $this->order = $order;        
-    // }
+    public function __construct($dataValidated)
+    {      
+        $this->dataValidated = $dataValidated;        
+    }
 
     /**
      * Build the message.
@@ -34,6 +34,6 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('mail');
+        return $this->markdown('mail');
     }
 }

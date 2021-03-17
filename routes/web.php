@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\API\ArticleController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PortfolioController;
@@ -23,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get( '/',                       [MainController::class,      'index']);
-Route::get( '/contacts',               [MainController::class,      'contacts']);
-Route::post('/contacts',               [MainController::class,      'getContacts']);
+Route::get( '/contacts',               [ContactController::class,   'contacts']);
+Route::post('/contacts',               [ContactController::class,   'getContacts']);
 Route::get( '/blog',                   [BlogController::class,      'index']);
 Route::get( '/reviews',                [ReviewController::class,    'reviews'])->name('review');
 Route::post('/reviews',                [ReviewController::class,    'saveReview']);
@@ -59,11 +60,3 @@ require __DIR__.'/auth.php';
 
 Route::get('/auth/redirect', [AuthController::class, 'redirect']);
 Route::get('/auth/callback', [AuthController::class, 'callback']);
-
-// Route::get('/settings', function () {
-//    // ...
-// })->middleware(['password.confirm']);
-
-// Route::post('/settings', function () {
-//    // ...
-// })->middleware(['password.confirm']);
