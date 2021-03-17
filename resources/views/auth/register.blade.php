@@ -56,6 +56,7 @@
                     {{ __('Register') }}
                 </x-button>
             </div>
+            <a href="/auth/github">Use Github account</a>
         </form>
     </x-auth-card>
 </x-guest-layout>
