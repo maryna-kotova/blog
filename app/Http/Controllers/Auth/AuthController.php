@@ -15,11 +15,13 @@ class AuthController extends Controller
    public function callback()
    {
       $user = Socialite::driver('github')->user();
+      // $user = Socialite::driver('github')->stateless()->user();  
       
           // OAuth 2.0 providers...
          $token = $user->token;
          $refreshToken = $user->refreshToken;
          $expiresIn = $user->expiresIn;
+         
 
          // OAuth 1.0 providers...
          $token = $user->token;
