@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Permission;
+use App\Http\Requests\ContactPostRequest;
 use App\Models\article;
-use App\Models\Role;
-use App\Models\Slider;
-use App\Models\User;
+
 
 class MainController extends Controller
 {
@@ -26,13 +22,10 @@ class MainController extends Controller
         return view('main.contacts', compact('title'));
     }
 
-    public function getContacts(Request $requesr)
+    public function getContacts(ContactPostRequest $request)
     {
-        $validated = $requesr->validate([
-            'name'    => 'required|min:3|max:255',
-            'email'   => 'required|email',
-            'message' => 'required|min:3',
-        ]);  
+        $validated = $request->validated();
+
         return back()->with('success', 'Thahks!');
     }
 }
