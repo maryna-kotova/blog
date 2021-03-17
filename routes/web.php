@@ -12,6 +12,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,13 @@ require __DIR__.'/auth.php';
 
 Route::get('/auth/redirect', [AuthController::class, 'redirect']);
 Route::get('/auth/callback', [AuthController::class, 'callback']);
+
+Route::post('/tokens/create', function (Request $request) {
+   $token = $request->user()->createToken($request->token_name);
+
+   return ['token' => $token->plainTextToken];
+});
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+   return $request->user();
+});
