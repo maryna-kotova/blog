@@ -19,7 +19,7 @@
           <a class="nav-link text-white underline" href="/news">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white underline" href="/blog">Blog</a>
+          <a class="nav-link text-white underline" href="/articles">Blog</a>
         </li>        
         <li class="nav-item">
           <a class="nav-link text-white underline" href="/portfolio">Portfolio</a>

@@ -27,7 +27,7 @@ use Illuminate\Http\Request;
 Route::get( '/',                       [MainController::class,      'index']);
 Route::get( '/contacts',               [ContactController::class,   'contacts']);
 Route::post('/contacts',               [ContactController::class,   'getContacts']);
-Route::get( '/blog',                   [BlogController::class,      'index']);
+Route::get( '/articles',               [BlogController::class,      'index']);
 Route::get( '/reviews',                [ReviewController::class,    'reviews'])->name('review');
 Route::post('/reviews',                [ReviewController::class,    'saveReview']);
 Route::get( '/portfolio',              [PortfolioController::class, 'portfolio']);
@@ -48,16 +48,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 
 Auth::routes();
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
 
 Route::get('/auth/redirect',   [AuthController::class, 'redirect']);
 Route::get('/auth/callback',   [AuthController::class, 'callback']);

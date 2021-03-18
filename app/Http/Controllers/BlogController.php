@@ -25,8 +25,7 @@ class BlogController extends Controller
     public function article(Article $article)
     {
         $recommended = $article->articleRecommended;        
-        $reviews= Review::where('article_id', $article->id)->get();         
-              
+        $reviews= Review::where('article_id', $article->id)->get();              
         $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
         // dd($moreArticles);    
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Resources\ArticleCollection;
+use App\Http\Controllers\Api\AuthApiController;
 use App\Http\Resources\ArticleResource;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +24,14 @@ Route::post('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
  
     return ['token' => $token->plainTextToken];
- }); 
+}); 
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::apiResource('articles', ArticleController::class);   
+});
+
+Route::post('register', [AuthApiController::class, 'register']);
+Route::post('login',    [AuthApiController::class, 'login']);
 
 
 
