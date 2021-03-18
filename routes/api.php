@@ -25,9 +25,7 @@ Route::post('/tokens/create', function (Request $request) {
  
     return ['token' => $token->plainTextToken];
  }); 
- Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
- });
+
 
 
 

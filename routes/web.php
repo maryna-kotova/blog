@@ -62,4 +62,6 @@ require __DIR__.'/auth.php';
 Route::get('/auth/redirect',   [AuthController::class, 'redirect']);
 Route::get('/auth/callback',   [AuthController::class, 'callback']);
 
-
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+   return $request->user();
+});
