@@ -53,7 +53,7 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
-            <a href="/auth/github">Use Github account</a>
+            <a href="/auth/redirect">Use Github account</a>
             
         </form>
     </x-auth-card>

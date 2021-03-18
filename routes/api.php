@@ -20,6 +20,14 @@ Route::get('/article/{id}', function ($id) {
     return new ArticleResource(Article::findOrFail($id));
 });
 
+Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+ 
+    return ['token' => $token->plainTextToken];
+ }); 
+ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+ });
 
 
 

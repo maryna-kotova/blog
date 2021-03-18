@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {           
-        $articles = Article::ail(); 
+        $articles = Article::all(); 
 
         return $this->sendResponse($articles->toArray(), 'Article retrieved successfully.');
     }

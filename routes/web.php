@@ -59,15 +59,7 @@ Auth::routes();
 
 require __DIR__.'/auth.php';
 
-Route::get('/auth/github',   [AuthController::class, 'redirect']);
-Route::get('/auth/callback', [AuthController::class, 'callback']);
+Route::get('/auth/redirect',   [AuthController::class, 'redirect']);
+Route::get('/auth/callback',   [AuthController::class, 'callback']);
 
 
-Route::post('/tokens/create', function (Request $request) {
-   $token = $request->user()->createToken($request->token_name);
-
-   return ['token' => $token->plainTextToken];
-}); 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-   return $request->user();
-});

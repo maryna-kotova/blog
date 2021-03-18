@@ -7,7 +7,7 @@ class MainController extends Controller
 {
     public function index()
     {        
-        $title = 'Development like hobby';
+        $title = 'Development';
         $articles = Article::with('category')->recommended()->latest()->get();          
 
         return view('main.index', compact('title', 'articles'));
