@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class AuthApiController extends Controller
@@ -35,17 +36,17 @@ class AuthApiController extends Controller
             'password' => 'required'
         ]);
         
-        $credentials = request(['email', 'password']);
-        if (!auth()->attempt($credentials)) {
-            return response()->json([
-                'message' => 'The given data was invalid.',
-                'errors' => [
-                    'password' => [
-                        'Invalid credentials'
-                    ],
-                ]
-            ], 422);
-        }
+        // $credentials = request(['email', 'password']);
+        // if (!auth()->attempt($credentials)) {
+        //     return response()->json([
+        //         'message' => 'The given data was invalid.',
+        //         'errors' => [
+        //             'password' => [
+        //                 'Invalid credentials'
+        //             ],
+        //         ]
+        //     ], 422);
+        // }
     
         $user = User::where('email', $request->email)->first();
 
