@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class AuthApiController extends Controller
 {
@@ -47,6 +48,12 @@ class AuthApiController extends Controller
         }
     
         $user = User::where('email', $request->email)->first();
+
+        if (! $user || ! Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect.'],
+            ]);
+        }
         $authToken = $user->createToken('auth-token')->plainTextToken;
     
         return response()->json([

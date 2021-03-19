@@ -14,7 +14,7 @@ class Article extends Model
 {
     use HasFactory, Sluggable, NoImage, HasApiTokens;
 
-    protected $fillable = 
+    protected $fillable =  
                         [
                             'name', 
                             'category_id',                            
