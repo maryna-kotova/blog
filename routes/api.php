@@ -16,20 +16,17 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/article/{id}', function ($id) {
-    return new ArticleResource(Article::findOrFail($id));
-});
+// Route::get('/article/{id}', function ($id) {
+//     return new ArticleResource(Article::findOrFail($id));
+// });
 
-Route::post('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
+// Route::post('/tokens/create', function (Request $request) {
+//     $token = $request->user()->createToken($request->token_name);
  
-    return ['token' => $token->plainTextToken];
-}); 
+//     return ['token' => $token->plainTextToken];
+// }); 
 
-Route::middleware('auth:sanctum')->group(function(){
-    Route::apiResource('articles', ArticleController::class);   
-    //
-});
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -43,8 +40,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [AuthApiController::class, 'register']);
 Route::post('/login',    [AuthApiController::class, 'login']);
 
-
-
+Route::middleware('auth:sanctum')->get('/articles', [ArticleController::class, 'index']);
 
 
 

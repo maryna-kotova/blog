@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\Sanctum;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRolesAndPermissions;
 
@@ -44,9 +44,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ]; 
 
-    public function boot()
-    {
-        Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
-    };
+    // public function boot()
+    // {
+    //     Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
+    // };
     
 }

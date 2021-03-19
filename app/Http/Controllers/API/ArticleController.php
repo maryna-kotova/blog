@@ -16,8 +16,7 @@ class ArticleController extends Controller
     public function index()
     {           
         $articles = Article::all(); 
-
-        return $this->sendResponse($articles->toArray(), 'Article retrieved successfully.');
+        return response()->json($articles);
     }
 
     /**
@@ -30,7 +29,7 @@ class ArticleController extends Controller
     {
         $moreArticles = Article::where('category_id', $article->category_id)->limit(2)->get();   
         // dd($moreArticles);
-        return $this->sendResponse($moreArticles->toArray(), 'Article created successfully.');
+        return response()->json($moreArticles);
     }
 
     /**
@@ -41,9 +40,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         
-        return $this->sendResponse($article->toArray(), 'Article retrieved successfully.');
+        return response()->json($article);
     }
 
     /**
@@ -57,7 +56,7 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);        
         $article -> update( $request->all() );
-        return $this->sendResponse($article->toArray(), 'Article updated successfully.');
+        return response()->json($article);
     }
 
     /**
@@ -69,6 +68,6 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
-        return $this->sendResponse($article->toArray(), 'Article deleted successfully.');
+        return response()->json($article);
     }
 }
