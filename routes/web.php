@@ -49,6 +49,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Auth::routes();
 
-Route::get('/auth/redirect',   [AuthController::class, 'redirect']);
-Route::get('/auth/callback',   [AuthController::class, 'callback']);
+Route::get('/login/redirect',   [AuthController::class, 'redirect']);
+Route::get('/login/callback',   [AuthController::class, 'callback']);
 

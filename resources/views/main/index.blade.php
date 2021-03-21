@@ -10,11 +10,3 @@
 @endsection
 
 @section('title', 'InCod')
-
-<script>
-function() {
- showName(this);
-}
-
-</script>
-

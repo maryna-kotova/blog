@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -51,4 +52,15 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+    
+    public function redirect()
+   {
+      return Socialite::driver('github')->redirect();
+   }
+   public function callback()
+   {      
+      $user = Socialite::driver('github')->user();
+      dd($user);
+
+   }
 }

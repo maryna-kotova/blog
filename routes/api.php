@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ArticleController;
 use App\Http\Controllers\Api\AuthApiController;
 use App\Http\Resources\ArticleResource;
 use App\Models\Article;

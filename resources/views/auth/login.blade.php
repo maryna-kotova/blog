@@ -16,6 +16,7 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
+            
 
             <!-- Email Address -->
             <div>
@@ -53,7 +54,7 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
-            <a href="/auth/redirect">Use Github account</a>
+            <a href="/login/redirect">Use Github account</a>
             
         </form>
     </x-auth-card>
