@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
-
 
 class AuthController extends Controller
 {
@@ -14,24 +14,29 @@ class AuthController extends Controller
    }
    public function callback()
    {      
-      $user = Socialite::driver('github')->user();
-      // dd($user);
+      $githubUser = Socialite::driver('github')->user();
       
-          // OAuth 2.0 providers...
-         // $token = $user->token;
-         // $refreshToken = $user->refreshToken;
-         // $expiresIn = $user->expiresIn;
-         
+      $user = User::firstOrCreate(
+         [
+            'provider_id' => $githubUser->getId(),
+         ],
+         [
+            'email' => $githubUser->getEmail(),
+            'name'  => $githubUser->getName(),
+         ]
+      );
+      // $user = User::where('provider_id', $githubUser->getId())->first();
 
-         // // // OAuth 1.0 providers...
-         // $token = $user->token;
-         // $tokenSecret = $user->tokenSecret;
+      // if( !$user ){      
+      //    $user = User::create([         
+      //       'email'       => $githubUser->getEmail(),
+      //       'name'        => $githubUser->getName(),
+      //       'provider_id' => $githubUser->getId(),         
+      //    ]);
+      // }
 
-         // // All providers...
-         // $user->getId();
-         // $user->getNickname();
-         // $user->getName();
-         // $user->getEmail();
-         // $user->getAvatar();
+      auth()->login($user, true);
+      
+      return redirect('dashboard');
    }
 }

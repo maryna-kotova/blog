@@ -49,6 +49,10 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Auth::routes();
 
-Route::get('/login/redirect',   [AuthController::class, 'redirect']);
-Route::get('/login/callback',   [AuthController::class, 'callback']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
+   return view('dashboard');
+})->name('dashboard');
+
+Route::get('/login/github',          [AuthController::class, 'redirect']);
+Route::get('/login/github/callback', [AuthController::class, 'callback']);
 
